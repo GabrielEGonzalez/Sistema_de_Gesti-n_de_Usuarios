@@ -2,7 +2,6 @@
 
 class Core
 {
-
     public $ref;
 
     public function getUrl()
