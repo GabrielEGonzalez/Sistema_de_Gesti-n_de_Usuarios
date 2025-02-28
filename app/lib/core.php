@@ -3,13 +3,11 @@
 class Core
 {
 
-    public function __construct()
-    {
-        $this->getUrl();
-    }
+    public $ref;
 
     public function getUrl()
     {
-        echo $_GET['url'];
+        $this->ref = $_SERVER['REQUEST_URI'];
+        return $this->ref;
     }
 }
