@@ -17,7 +17,7 @@ echo '</pre>'; */
 if( $url->getUrl() === (BASE_URL .'public/home/')){
     $nueva = new ControllersPrueba();
     $nueva->index();
-}else if($url->getUrl() === (BASE_URL .'public/')){
+}else if($url->getUrl() === (BASE_URL)){
     echo 'este es el principio';
 }else{
     echo '</br>';
