@@ -14,14 +14,14 @@ $url = new Core();
 print_r($nuevaURL); // Muestra las partes de la URL
 echo '</pre>'; */
 /* BASE_URL .'public/'. $nuevaURL[4].'/' */
-if( $url->getUrl() === (BASE_URL .'public/home/')){
+if ($url->getUrl() === (BASE_URL . 'public/home/')) {
+} else if ($url->getUrl() === (BASE_URL)) {
+
     $nueva = new ControllersPrueba();
     $nueva->index();
-}else if($url->getUrl() === (BASE_URL)){
-    echo 'este es el principio';
-}else{
+} else {
     echo '</br>';
     echo 'hola error en el ruta ⚠️. ';
     echo '</br>';
-    echo BASE_URL .'public/home/';
+    echo BASE_URL . 'public/home/';
 }
