@@ -4,6 +4,7 @@ require_once '../app/config/config.php';
 /* require_once '../app/init.php'; */
 require_once '../app/lib/core.php';
 require_once '../app/controllers/ControllersPrueba.php';
+require_once '../app/controllers/AuthControllers.php';
 
 $url = new Core();
 /* echo '' . $url->getUrl(); */
@@ -15,11 +16,16 @@ print_r($nuevaURL); // Muestra las partes de la URL
 echo '</pre>'; */
 /* BASE_URL .'public/'. $nuevaURL[4].'/' */
 if ($url->getUrl() === (BASE_URL . 'public/home/')) {
-} else if ($url->getUrl() === (BASE_URL)) {
-
     $nueva = new ControllersPrueba();
     $nueva->index();
-} else {
+} else if ($url->getUrl() === (BASE_URL)) {
+
+    $dash = new AuthController();
+    $dash->inicioSecion();
+    
+} else if($url->getUrl() === (BASE_URL . 'public/editar/')){
+
+}else {
     echo '</br>';
     echo 'hola error en el ruta ⚠️. ';
     echo '</br>';
