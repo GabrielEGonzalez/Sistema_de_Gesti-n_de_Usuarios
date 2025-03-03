@@ -23,7 +23,7 @@ $usuarios = [
 </head>
 
 <body>
-    <?php $rol = 'user' ?>
+    <?php $rol = 'admin' ?>
     <div class="container mt-5">
         <table class="table table-bordered">
             <thead>
