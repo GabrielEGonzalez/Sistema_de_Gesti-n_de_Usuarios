@@ -1,6 +1,6 @@
 <?php
 session_start();
-$rol = isset($_SESSION['rol']) ? $_SESSION['rol'] : NULL;
+$rol = isset($_SESSION['usuario']['rol']) ? $_SESSION['usuario']['rol'] : NULL;
 // Datos de ejemplo para la tabla esto datos son de prueba solo para ver 
 
 // los datos reales 
@@ -23,7 +23,7 @@ $usuarios = [
 </head>
 
 <body>
-    <?php $rol = 'admin' ?>
+    <?php echo " ".$rol ?>
     <div class="container mt-5">
         <table class="table table-bordered">
             <thead>
@@ -41,7 +41,7 @@ $usuarios = [
                         <td><?php echo $usuario['usuario']; ?></td>
                         <td><?php echo $usuario['rol']; ?></td>
                         <td>
-                            <?php if ($rol == 'admin'): ?>
+                            <?php if ($rol == 'Administrador'): ?>
                                 <a href="editar.php?id=<?php echo $usuario['id']; ?>" class="btn btn-primary btn-sm">Editar</a>
                                 <a href="eliminar.php?id=<?php echo $usuario['id']; ?>" class="btn btn-danger btn-sm">Eliminar</a>
                             <?php elseif ($rol == 'editor' && $usuario['rol'] != 'admin'): ?>
