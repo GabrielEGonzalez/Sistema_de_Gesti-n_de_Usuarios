@@ -25,6 +25,10 @@ if ($url->getUrl() === (BASE_URL . 'public/home/')) {
     
 } else if($url->getUrl() === (BASE_URL . 'public/editar/')){
 
+}else if($url->getUrl() === (BASE_URL . 'public/iniciar/')){
+    $email = $_POST['mail'];
+    $password = $_POST['password'];
+    echo $email.''.$password;
 }else {
     echo '</br>';
     echo 'hola error en el ruta ⚠️. ';
