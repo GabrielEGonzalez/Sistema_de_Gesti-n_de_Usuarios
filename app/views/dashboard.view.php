@@ -1,5 +1,15 @@
 <?php
 session_start();
+
+
+// Verifica si el usuario está logueado
+if (!isset($_SESSION['usuario'])) {
+    // Redirige al usuario a la página de login
+    header('Location: http://localhost/sistemaGestionUsuario/Sistema_de_Gesti-n_de_Usuarios/');
+    exit(); // Asegúrate de detener la ejecución del script
+}
+
+
 $rol = isset($_SESSION['usuario']['rol']) ? $_SESSION['usuario']['rol'] : NULL;
 // Datos de ejemplo para la tabla esto datos son de prueba solo para ver 
 
