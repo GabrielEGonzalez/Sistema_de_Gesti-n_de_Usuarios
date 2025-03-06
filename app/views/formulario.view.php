@@ -14,9 +14,11 @@
         padding: 0;
         box-sizing: border-box;
         font-family: 'Courier New', Courier, monospace;
+        
     }
 
     body {
+        background-color: burlywood;
         position: absolute;
         top: 50%;
         left: 50%;

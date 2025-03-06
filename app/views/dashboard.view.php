@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+require_once 'C:\xampp\htdocs\sistemaGestionUsuario\Sistema_de_Gesti-n_de_Usuarios\app\config\config.php'; 
 
 // Verifica si el usuario está logueado
 if (!isset($_SESSION['usuario'])) {
@@ -15,9 +15,9 @@ $rol = isset($_SESSION['usuario']['rol']) ? $_SESSION['usuario']['rol'] : NULL;
 
 // los datos reales 
 $usuarios = [
-    ['id' => 1, 'usuario' => 'admin', 'rol' => 'admin'],
-    ['id' => 2, 'usuario' => 'editor', 'rol' => 'editor'],
-    ['id' => 3, 'usuario' => 'user', 'rol' => 'user']
+    ['id' => 1, 'nombre' => 'juanperez', 'email' => 'admin@example.com', 'rol' => 'admin'],
+    ['id' => 2, 'nombre' => 'mariagarcia', 'email' => 'editor@example.com', 'rol' => 'editor'],
+    ['id' => 3, 'nombre' => 'carloslopez', 'email' => 'user@example.com', 'rol' => 'user']
 ];
 ?>
 
@@ -30,16 +30,34 @@ $usuarios = [
     <title>dashboard</title>
     <!-- Agregar enlace a Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <?php echo " ".$rol ?>
+
+    <div class="container mt-5 con">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h1>Panel de Administración</h1>
+                <p>Gestiona los usuarios registrados en el sistema</p>
+            </div>
+            <div>
+                <a href="<?php echo BASE_URL ?>public/agregar/" class="btn btn-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                    Agregar Usuario
+                </a>
+            </div>
+        </div>
+    </div>
     <div class="container mt-5">
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Usuario</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
                     <th>Rol</th>
                     <th>Acciones</th>
                 </tr>
@@ -48,7 +66,8 @@ $usuarios = [
                 <?php foreach ($usuarios as $usuario): ?>
                     <tr>
                         <td><?php echo $usuario['id']; ?></td>
-                        <td><?php echo $usuario['usuario']; ?></td>
+                        <td><?php echo $usuario['nombre']; ?></td>
+                        <td><?php echo $usuario['email']; ?></td>
                         <td><?php echo $usuario['rol']; ?></td>
                         <td>
                             <?php if ($rol == 'Administrador'): ?>
