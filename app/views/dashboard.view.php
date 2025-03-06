@@ -52,8 +52,8 @@ $usuarios = [
         </div>
     </div>
     <div class="container mt-5">
-        <table class="table table-bordered">
-            <thead>
+        <table class="table table-striped table-hover">
+            <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
