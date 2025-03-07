@@ -5,6 +5,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            font-size: 1.4em;
+        }
+
+        p {
+            font-size: .8em;
+            margin-top: .3rem;
+            color: rgba(61, 60, 60, 0.582);
+        }
+
+        body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .con {
+            background-color: azure;
+            padding: 2rem;
+            border: 1px solid rgba(61, 60, 60, 0.582);
+            border-radius: 8px;
+        }
+
+        .ConN {
+            display: flex;
+            flex-direction: column;
+            font-size: .8em;
+        }
+
+
+        input {
+            padding: .4rem;
+            border: 1px solid rgba(61, 60, 60, 0.582);
+            border-radius: 5px;
+        }
+
+        input[type='submit'] {
+            margin-top: 1rem;
+            background-color: black;
+            color: white;
+        }
+
+        input[type='submit']:hover {
+            background-color: rgb(26, 25, 25);
+        }
+
+        select {
+            padding: .4rem;
+        }
+
+        label {
+            padding: .8rem 0;
+            font-weight: 500;
+        }
+    </style>
 </head>
 
 <body>
