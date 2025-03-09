@@ -1,3 +1,19 @@
+<?php 
+    require_once __DIR__ . '/../config/config.php';
+
+
+/* if (!isset($_SESSION['usuario'])) {
+    // Redirige al usuario a la página de login
+    header('Location: http://localhost/sistemaGestionUsuario/Sistema_de_Gesti-n_de_Usuarios/');
+    exit(); // Asegúrate de detener la ejecución del script
+} */
+
+    $rol = isset($_SESSION['usuario']['rol']) ? $_SESSION['usuario']['rol']: NULL ;
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,68 +23,68 @@
     <title>Registro</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-        h1 {
-            font-size: 1.4em;
-        }
+    h1 {
+        font-size: 1.4em;
+    }
 
-        p {
-            font-size: .8em;
-            margin-top: .3rem;
-            color: rgba(61, 60, 60, 0.582);
-        }
+    p {
+        font-size: .8em;
+        margin-top: .3rem;
+        color: rgba(61, 60, 60, 0.582);
+    }
 
-        body {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+    body {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-        .con {
-            background-color: azure;
-            padding: 2rem;
-            border: 1px solid rgba(61, 60, 60, 0.582);
-            border-radius: 8px;
-        }
+    .con {
+        background-color: azure;
+        padding: 2rem;
+        border: 1px solid rgba(61, 60, 60, 0.582);
+        border-radius: 8px;
+    }
 
-        .ConN {
-            display: flex;
-            flex-direction: column;
-            font-size: .8em;
-        }
+    .ConN {
+        display: flex;
+        flex-direction: column;
+        font-size: .8em;
+    }
 
 
-        input {
-            padding: .4rem;
-            border: 1px solid rgba(61, 60, 60, 0.582);
-            border-radius: 5px;
-        }
+    input {
+        padding: .4rem;
+        border: 1px solid rgba(61, 60, 60, 0.582);
+        border-radius: 5px;
+    }
 
-        input[type='submit'] {
-            margin-top: 1rem;
-            background-color: black;
-            color: white;
-        }
+    input[type='submit'] {
+        margin-top: 1rem;
+        background-color: black;
+        color: white;
+    }
 
-        input[type='submit']:hover {
-            background-color: rgb(26, 25, 25);
-        }
+    input[type='submit']:hover {
+        background-color: rgb(26, 25, 25);
+    }
 
-        select {
-            padding: .4rem;
-        }
+    select {
+        padding: .4rem;
+    }
 
-        label {
-            padding: .8rem 0;
-            font-weight: 500;
-        }
+    label {
+        padding: .8rem 0;
+        font-weight: 500;
+    }
     </style>
 </head>
 
@@ -80,7 +96,7 @@
         </div>
 
         <div class="con-2">
-            <form action="/" method="post">
+            <form action="<?php BASE_URL ?>/public/Registrar" method="post">
                 <div class="ConN">
                     <label for="Nombre">Nombre</label>
                     <input type="text" name="Nombre" id="Nombre" placeholder="Ingrese su nombre">
