@@ -2,13 +2,15 @@
     require_once __DIR__ . '/../config/config.php';
 
 
-/* if (!isset($_SESSION['usuario'])) {
-    // Redirige al usuario a la página de login
-    header('Location: http://localhost/sistemaGestionUsuario/Sistema_de_Gesti-n_de_Usuarios/');
-    exit(); // Asegúrate de detener la ejecución del script
-} */
+    session_start(); // Asegúrate de iniciar la sesión
 
-    $rol = isset($_SESSION['usuario']['rol']) ? $_SESSION['usuario']['rol']: NULL ;
+    if (!isset($_SESSION['usuario'])) {
+        // Redirige al usuario a la página de login
+        header('Location: http://localhost/sistemaGestionUsuario/Sistema_de_Gesti-n_de_Usuarios/');
+        exit(); // Asegúrate de detener la ejecución del script
+    }
+
+    $rol = isset($_SESSION['usuario']['rol']) ? $_SESSION['usuario']['rol']: 'usuario no verificado' ;
 
 
 ?>
@@ -89,6 +91,7 @@
 </head>
 
 <body>
+    <?php if( $rol  === "Administrador" || $rol === "editor" ) :?> 
     <main class="con">
         <div class="con-1">
             <h1>Registro de Usuario</h1>
@@ -131,6 +134,11 @@
             </form>
         </div>
     </main>
+    <?php else :?>
+    <main class="con">
+        <?php header('Location: http://localhost/sistemaGestionUsuario/Sistema_de_Gesti-n_de_Usuarios/public/dashboard/');?>
+    </main>
+    <?php endif;?>
 </body>
 
 </html>
