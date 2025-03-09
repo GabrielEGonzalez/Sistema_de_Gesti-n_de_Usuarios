@@ -19,4 +19,15 @@ class UserModel{
 
         return $usuario;
     }
+
+    public function createUser($nombre, $email, $password, $rol) {
+        $stmt = $this->pdo->prepare("INSERT INTO usuarios (nombre, email, password, rol) VALUES (:nombre, :email, :password, :rol)");
+        $stmt->bindParam(":nombre", $nombre);
+        $stmt->bindParam(":email", $email);
+        $stmt->bindParam(":password", $password);
+        $stmt->bindParam(":rol", $rol);
+        return $stmt->execute();
+    }
+
+    
 }
