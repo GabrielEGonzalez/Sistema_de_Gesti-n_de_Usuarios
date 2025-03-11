@@ -24,16 +24,18 @@ if ($url->getUrl() === (BASE_URL . 'public/dashboard')) {
 } else if ($url->getUrl() === (BASE_URL)) {
 
     $authController->inicioSecion();
-    
-} else if($url->getUrl() === (BASE_URL . 'public/editar/')){
 
-}else if($url->getUrl() === (BASE_URL . 'public/iniciar/')){
+} else if ($url->getUrl() === (BASE_URL . 'public/editar/')) {
+
+} else if ($url->getUrl() === (BASE_URL . 'public/iniciar/')) {
     $authController->verificarCredenciales();
-}else if($url->getUrl() === (BASE_URL . 'public/agregar/')){
+} else if ($url->getUrl() === (BASE_URL . 'public/agregar/')) {
 
     $userControlller->registar();
 
-}else {
+} else if ($url->getUrl() === (BASE_URL . '/public/Registrar')) {
+    $userControlller->agregar();
+} else {
     echo '</br>';
     echo 'hola error en el ruta ⚠️. ';
     echo '</br>';

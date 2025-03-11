@@ -112,7 +112,7 @@
 
                 <div class="ConN">
                     <label for="password">Contraseña</label>
-                    <input type="password" name="Nombre" id="Nombre" placeholder="•••••••••">
+                    <input type="password" name="password" id="password" placeholder="•••••••••">
                 </div>
 
                 <div class="ConN">
