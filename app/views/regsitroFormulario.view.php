@@ -99,7 +99,7 @@
         </div>
 
         <div class="con-2">
-            <form action="<?php BASE_URL ?>/public/Registrar" method="post">
+            <form action="<?php echo BASE_URL ?>/public/Registrar" method="post">
                 <div class="ConN">
                     <label for="Nombre">Nombre</label>
                     <input type="text" name="Nombre" id="Nombre" placeholder="Ingrese su nombre">

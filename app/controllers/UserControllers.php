@@ -10,6 +10,11 @@ class UserControllers{
         $this->model= new UserModel();
     }
 
+    public function dashboard(){
+        $usuarios = $this->model->getAllUsers();
+        require_once __DIR__ . '/../views/dashboard.view.php';
+    }
+
     public function registar(){
         require_once __DIR__ . '/../views/regsitroFormulario.view.php';
     }

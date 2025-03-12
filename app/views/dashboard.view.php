@@ -11,14 +11,6 @@ if (!isset($_SESSION['usuario'])) {
 
 
 $rol = isset($_SESSION['usuario']['rol']) ? $_SESSION['usuario']['rol'] : NULL;
-// Datos de ejemplo para la tabla esto datos son de prueba solo para ver 
-
-// los datos reales 
-$usuarios = [
-    ['id' => 1, 'nombre' => 'juanperez', 'email' => 'admin@example.com', 'rol' => 'admin'],
-    ['id' => 2, 'nombre' => 'mariagarcia', 'email' => 'editor@example.com', 'rol' => 'editor'],
-    ['id' => 3, 'nombre' => 'carloslopez', 'email' => 'user@example.com', 'rol' => 'user']
-];
 ?>
 
 <!DOCTYPE html>

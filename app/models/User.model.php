@@ -30,16 +30,14 @@ class UserModel{
     }
 
     public function getAllUsers(){
-        $stmt = $this->pdo->prepare('SELECT * FROM usuario');
+        $stmt = $this->pdo->prepare('SELECT * FROM usuarios');
         $stmt->execute();
 
-        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        return $usuario;
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getUser($id){
-        $stmt = $this->pdo->prepare("SELECT id ,nombre , rol FROM usuarios where id = :id");
+        $stmt = $this->pdo->prepare("SELECT id ,nombre, rol FROM usuarios where id = :id");
         $stmt->bindParam(':id',$id);
         $stmt->execute();
 

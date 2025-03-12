@@ -19,8 +19,7 @@ print_r($nuevaURL); // Muestra las partes de la URL
 echo '</pre>'; */
 /* BASE_URL .'public/'. $nuevaURL[4].'/' */
 if ($url->getUrl() === (BASE_URL . 'public/dashboard')) {
-    $nueva = new ControllersPrueba();
-    $nueva->index();
+    $userControlller->dashboard();
 } else if ($url->getUrl() === (BASE_URL)) {
 
     $authController->inicioSecion();
