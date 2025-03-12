@@ -29,5 +29,22 @@ class UserModel{
         return $stmt->execute();
     }
 
-    
+    public function getAllUsers(){
+        $stmt = $this->pdo->prepare('SELECT * FROM usuario');
+        $stmt->execute();
+
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $usuario;
+    }
+
+    public function getUser($id){
+        $stmt = $this->pdo->prepare("SELECT id ,nombre , rol FROM usuarios where id = :id");
+        $stmt->bindParam(':id',$id);
+        $stmt->execute();
+
+        $dataUser = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $dataUser;
+    }
 }
