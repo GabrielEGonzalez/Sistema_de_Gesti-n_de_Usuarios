@@ -63,7 +63,7 @@ $rol = isset($_SESSION['usuario']['rol']) ? $_SESSION['usuario']['rol'] : NULL;
                         <td><?php echo $usuario['rol']; ?></td>
                         <td>
                             <?php if ($rol == 'Administrador'): ?>
-                                <a href="editar.php?id=<?php echo $usuario['id']; ?>" class="btn btn-primary btn-sm">Editar</a>
+                                <a href="<?php echo BASE_URL ?>public/editar?id=<?php echo $usuario['id']; ?>" class="btn btn-primary btn-sm">Editar</a>
                                 <a href="eliminar.php?id=<?php echo $usuario['id']; ?>" class="btn btn-danger btn-sm">Eliminar</a>
                             <?php elseif ($rol == 'editor' && $usuario['rol'] != 'admin'): ?>
                                 <a href="editar.php?id=<?php echo $usuario['id']; ?>" class="btn btn-primary btn-sm">Editar</a>
