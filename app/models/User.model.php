@@ -37,7 +37,7 @@ class UserModel{
     }
 
     public function getUser($id){
-        $stmt = $this->pdo->prepare("SELECT id ,nombre, rol FROM usuarios where id = :id");
+        $stmt = $this->pdo->prepare("SELECT id ,nombre, rol , email , password FROM usuarios where id = :id");
         $stmt->bindParam(':id',$id);
         $stmt->execute();
 

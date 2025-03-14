@@ -55,4 +55,11 @@ class UserControllers{
         }
         
     }
+
+    public function editview(){
+
+        $id = $_GET['id'];
+        $usuario = $this->model->getUser($id);
+        require_once __DIR__ . '/../views/formularioEditar.view.php';
+    }
 }
